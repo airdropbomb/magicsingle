@@ -13,12 +13,12 @@ function loadData(file) {
   try {
     const datas = fs.readFileSync(file, "utf8").replace(/\r/g, "").split("\n").filter(Boolean);
     if (datas?.length <= 0) {
-      console.log(colors.red(`Không tìm thấy dữ liệu ${file}`));
+      console.log(colors.red(`No data found in ${file}`)); // Translated from Burmese
       return [];
     }
     return datas;
   } catch (error) {
-    console.log(`Không tìm thấy file ${file}`.red);
+    console.log(`File ${file} not found`.red); // Translated from Burmese
     return [];
   }
 }
@@ -149,7 +149,7 @@ async function runAccount(cookie, proxy) {
 
 (async () => {
   console.clear();
-  console.log(`Tool được phát triển bởi nhóm telegram: https://t.me/airdrophuntersieutoc`);
+  console.log(`Tool modified by the Telegram group: https://t.me/airdropbombnode`); // Translated from Burmese
   console.log("🚀 Starting Puppeteer Bot...");
   const data = loadData("data.txt");
   const proxies = loadData("proxy.txt");
@@ -178,3 +178,14 @@ async function runAccount(cookie, proxy) {
     await delay(DEFAULT_SLEEP_TIME);
   }
 })();
+
+// Adding the banner
+console.log(`
+ █████╗ ██████╗ ██████╗     ███╗   ██╗ ██████╗ ██████╗ ███████╗
+██╔══██╗██╔══██╗██╔══██╗    ████╗  ██║██╔═══██╗██╔══██╗██╔════╝
+███████║██║  ██║██████╔╝    ██╔██╗ ██║██║   ██║██║  ██║█████╗  
+██╔══██║██║  ██║██╔══██╗    ██║╚██╗██║██║   ██║██║  ██║██╔══╝  
+██║  ██║██████╔╝██████╔╝    ██║ ╚████║╚██████╔╝██████╔╝███████╗
+╚═╝  ╚═╝╚═════╝ ╚═════╝     ╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚══════╝   
+            ${chalk.yellow('magicnewton')}                
+`);
